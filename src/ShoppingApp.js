@@ -3,6 +3,7 @@
 import React from 'react'
 import ItemList from './components/ItemList'
 import {connect} from 'react-redux'
+import {addcart} from './actions/index'
 
 function ShoppingApp (props){
     console.log('render running',props)
@@ -26,7 +27,7 @@ function mapDispatchToProps(dispatch){
         addcart:(id,name,price) => {
             console.log("Add cart click")
             console.log(id,name,price)
-            const action = {type : "ADDTOCART",id : id,name : name,price : price}
+            const action = addcart(id,name,price)
             dispatch(action)
         }
     }
